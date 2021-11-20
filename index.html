@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="#">
+    <title>Tip Calculator</title>
+
+</head>
+
+<body>
+    <h1><img src="images/logo.svg" alt=""></h1>
+    <div class="content">
+        <div class="data-inputs">
+
+            <div class="bill">
+                <h4>Bill</h4>
+                <input class="bill__item-number input" id="input-bill" type="text" placeholder="0">
+            </div>
+
+            <div class="selectTip">
+                <h4>Select Tip %</h4>
+                <div class="selectTip__items">
+
+                    <button class="selectTip__item-btn" value="5">5%</button>
+                    <button class="selectTip__item-btn" value="10">10%</button>
+                    <button class="selectTip__item-btn" value="15">15%</button>
+                    <button class="selectTip__item-btn" value="25">25%</button>
+                    <button class="selectTip__item-btn" value="50">50%</button>
+                    <input class="selectTip__item-input input " id="input-custom-tip" type="text" placeholder="Custom">
+                </div>
+            </div>
+
+            <div class="numberPeople">
+                <h4>Number of People</h4>
+                <input class="numberPeople__item-number input" id="input-number-people" type="text" placeholder="0">
+            </div>
+        </div>
+        
+        <div class="result">
+            <div class="result__item tipAmount">
+                <div class="tipAmount__item title">
+                    <h4>Tip Amount</h4>
+                    <p>/ person</p>
+                </div>
+
+
+                <div class="tipAmount__item amount-result">
+                    <h2 id="tip-amount-person">$0.00</h2>
+                </div>
+
+            </div>
+
+            <div class="result__item tipTotal">
+                <div class="total__item title">
+                    <h4>Total</h4>
+                    <p>/ person</p>
+                </div>
+                <div class="total__item total-result" >
+                    <h2 id="total-person">$0.00</h2>
+                </div>
+
+            </div>
+            <button class="result__item btn-reset" id="btn-reset">RESET</button>
+        </div>
+        <script src="code.js"></script>
+</body>
+
+</html>

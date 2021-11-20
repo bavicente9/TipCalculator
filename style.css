@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+*{
+    font-family: 'Space Mono', monospace;
+}
+
+:root{
+    --StrongCyan: hsl(172, 67%, 45%);
+    --VeryDarkCyan: hsl(183, 100%, 15%);
+    --DarkGrayishCyan1: hsl(186, 14%, 43%);
+    --DarkGrayishCyan2: hsl(184, 14%, 56%);
+    --LightGrayishCyan1: hsl(185, 45%, 81%);
+    --LightGrayishCyan2: hsl(189, 45%, 95%);
+    --White: hsl(0, 0%, 100%);
+
+    --generalMargin:5px 25px 20px;
+}
+
+body{
+    background: var(--LightGrayishCyan1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+input{
+    font-size: 24px;
+}
+
+
+.content{
+    background-color: var(--White);
+    min-width: 375px;
+    max-width: 375px;
+    border-radius: 20px;
+
+    
+}
+/*bill */
+.bill{
+
+    margin: var(--generalMargin);
+}
+
+.bill h4{
+    color: var(--DarkGrayishCyan1);
+    margin-bottom: 0px;
+}
+.bill__item-number{
+    background-image: url(images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    text-align: right;
+    width: 100%;
+    
+
+    background-color: var(--LightGrayishCyan2);
+    border: none;
+    border-radius: 5px;
+    
+  
+    
+}
+
+
+
+
+
+/*select tip*/
+.selectTip{
+    margin: 5px 25px 20px; 
+    color: var(--DarkGrayishCyan1);
+}
+
+.selectTip__items{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(75px,1fr));
+    grid-template-rows: repeat(3, minmax(25px, 1fr));
+    grid-gap: 10px 40px;
+}
+
+.selectTip__item-btn{
+    
+    
+    background-color: var(--VeryDarkCyan);
+    color: var(--White);
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+#input-custom-tip{
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    text-align: right;
+    color: var(--VeryDarkCyan);
+    background-color: var(--LightGrayishCyan2);
+    
+}
+
+/*Number of people*/
+.numberPeople{
+    margin: var(--generalMargin);
+}
+
+.numberPeople h4{
+    color: var(--DarkGrayishCyan1);
+    margin-bottom: 0px;
+}
+.numberPeople__item-number{
+    background-image: url(images/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    text-align: right;
+    width: 100%;
+    background-color: var(--LightGrayishCyan2);
+    border: none;
+    border-radius: 5px;
+    
+
+}
+
+
+/*Result*/
+
+.result{
+    background-color: var(--VeryDarkCyan);
+    margin: var(--generalMargin);
+    border-radius: 10px;
+    position: relative;
+}
+
+/*result - tipAmount and totalAmount*/
+
+.tipAmount, .tipTotal{
+    display: grid;
+    grid-template-columns:minmax(100px, 200px) minmax(175px,300px) ;
+    grid-template-rows: 70px;
+    grid-template-areas: 
+    "title result ";
+
+    margin: 10px 25px 5px;
+}
+
+.tipAmount .title, .tipTotal .title{
+   
+    grid-area: title;
+    line-height: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: flex-start;
+    
+    
+}
+.tipAmount .title h4, .tipTotal .title h4{
+    color: var(--White);
+    font-size: 15px;
+}
+.tipAmount .title p, .tipTotal .title p{
+    color: var(--LightGrayishCyan1);
+    font-size: 13px;
+    margin-top: 0px;
+
+}
+
+
+.tipAmount .amount-result, .tipTotal .total-result{
+    color: var(--StrongCyan);
+    font-size: 20px;
+
+    grid-area: result;
+    display: flex;
+    justify-content: right ;
+    align-items: center;
+    
+}
+
+/*result - total*/
+.btn-reset{
+    min-width: 85%;
+    padding: 10px 10px;
+    margin: var(--generalMargin);
+ 
+    border: none;
+    border-radius: 5px;
+    background-color: var(--StrongCyan);
+    color: var(--VeryDarkCyan);
+
+    font-size: 20px;
+}
+
+
+
+/*effects*/
+/*focus*/
+.bill__item-number:focus, #tipCustom:focus, .numberPeople__item-number:focus {
+   
+    outline:2px solid var(--StrongCyan);
+}
+/*buttons*/
+.selectTip__item-btn:active{
+    background-color: var(--LightGrayishCyan1);
+    color: #000;
+}
+
+.btn-reset:active{
+    background-color: var(--LightGrayishCyan1);
+}
+
+
+
+/*Responsive to desktop*/
+
+@media screen and (min-width:800px){
+    
+    body{
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+
+    .content{
+        width: none;
+        min-width: 750px;
+        max-width: 1440px;
+
+        display: flex;
+        flex-direction: row;
+
+        
+    }
+    
+    .result{
+        margin-top: 20px;
+    }
+    
+    .btn-reset{
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+
+
+/*effects used with js*/
+
+.btn-selected{
+    background-color: var(--StrongCyan);
+    color: #000;
+}
+
+
+.input-error{
+    outline:2px solid rgb(250, 0, 0);
+    
+}
+
+
